@@ -3,7 +3,7 @@ import { SearchContext } from "../context/Context"
 
 import { IoMdAddCircleOutline } from "react-icons/io";
 import ProductCard from "../component/ProductCard/ProductCard";
-import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import { useLoaderData,  useNavigate } from "react-router-dom";
 import type { productsData } from "../interfaces";
 import axios from "axios";
 

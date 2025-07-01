@@ -59,7 +59,7 @@ const root = createBrowserRouter(
         },
         {
           path: "edit/:id",
-          element: <Suspense fallback={<div className=' w-screen h-screen text-black dark:text-white text-center flex items-center justify-center text-6xl'>There Ss No Produects Yet ....</div>}>
+          element: <Suspense fallback={<div className=' w-screen h-screen text-black dark:text-white text-center flex items-center justify-center text-6xl'>There Is No Produects Yet ....</div>}>
             <Edit />
           </Suspense>,
           loader: async ({ params }) => {

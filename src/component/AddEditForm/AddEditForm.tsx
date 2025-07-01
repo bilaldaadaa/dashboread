@@ -1,7 +1,7 @@
 import { PiUploadDuotone } from "react-icons/pi"
 import type { AddEditFormProps, dataAdd } from "../../interfaces"
 import { useRef, useState, type ChangeEvent, type FormEvent } from "react"
-
+import Spinner from "../../assets/img/Spinner.gif"
 
 const AddEditForm = ({ title, setData, oldData, loading }: AddEditFormProps) => {
     const [imageUrl, setImageUrl] = useState<string>('')
@@ -43,7 +43,7 @@ const AddEditForm = ({ title, setData, oldData, loading }: AddEditFormProps) => 
                     <input onChange={handelImage} type="file" id="image" className="hidden" required />
                 </div>
             </div>
-            <button type="submit" className="cursor-pointer bg-blue-900 w-[150px] h-[50px] text-white rounded-2xl " ><span className="flex items-center justify-center">{loading ? <img className="w-[50px] h-[50px]" src="/public/assets/img/Spinner.gif" alt="" /> : oldData ? "update" : "create"}</span></button>
+            <button type="submit" className="cursor-pointer bg-blue-900 w-[150px] h-[50px] text-white rounded-2xl " ><span className="flex items-center justify-center">{loading ? <img className="w-[50px] h-[50px]" src={Spinner} alt="" /> : oldData ? "update" : "create"}</span></button>
         </form>
     )
 }

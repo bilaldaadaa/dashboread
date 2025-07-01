@@ -3,7 +3,7 @@ import { useRef, useState, type ChangeEvent, type FormEvent, } from "react";
 import { Link } from "react-router-dom";
 import type { AuthFormProps } from "../../interfaces";
 
-
+import Spinner from "../../assets/img/Spinner.gif"
 
 
 
@@ -67,7 +67,7 @@ const AuthForm = <T extends object>({ title, descriptions, inputs, footer, btn, 
                 </div>
             </div>
             <footer className="">
-                <button type="submit" className=" mb-[8px] font-Nunito font-bold text-[16px] leading-[100%] text-white  cursor-pointer bg-[#4880FF] w-[434px] h-[50px] rounded-[8px] opacity-90 "> <span className="flex items-center justify-center">{loading ? <img className="w-[50px] h-[50px]" src="/public/assets/img/Spinner.gif" alt="" /> : btn}</span></button>
+                <button type="submit" className=" mb-[8px] font-Nunito font-bold text-[16px] leading-[100%] text-white  cursor-pointer bg-[#4880FF] w-[434px] h-[50px] rounded-[8px] opacity-90 "> <span className="flex items-center justify-center">{loading ? <img className="w-[50px] h-[50px]" src={Spinner} alt="" /> : btn}</span></button>
                 <p className="opacity-80 font-Nunito font-semibold text-[16px] leading-[100%] text-[#202224]">{footer.content} <Link className=" opacity-100 text-[#5A8CFF] underline decoration-[#5A8CFF]" to={footer.links.url}>{footer.links.content}</Link> </p>
             </footer>
 

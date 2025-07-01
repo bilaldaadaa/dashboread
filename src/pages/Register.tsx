@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import type { signUpData } from "../interfaces";
 import { toast } from "react-toastify";
+import Profile_Image from "../assets/img/Profile_Image.png"
 const inputs =
     [
         { label: "First Name", type: "text", placeholder: "First Name", name: "first_name" },
@@ -12,7 +13,7 @@ const inputs =
         { label: "Email", type: "email", placeholder: "Email", name: "email" },
         { label: "Pasword", type: "password", placeholder: "*******", name: "password" },
         { label: "Password Confirmation", type: "password", placeholder: "*******", name: "password_confirmation" },
-        { label: "/public/assets/img/Profile_Image.png", type: "file", name: " profile_image" },
+        { label: Profile_Image, type: "file", name: " profile_image" },
     ]
 
 

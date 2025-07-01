@@ -10,17 +10,16 @@ const Edit = () => {
     const [loading, setLoading] = useState<boolean>(false)
     const params = useParams()
     const nav = useNavigate()
+    const oldData = useLoaderData()
     const [data, setData] = useState<dataAdd>({
         name: "",
         price: "",
         image: null
     })
-    const oldData = useLoaderData()
-
     useEffect(() => {
-        if (data.name != '') {
+        if (data.name != '' || data.price != "" || data.image != null) {
             setLoading(true)
-            axios.post("https://vica.website/api/items/" + params.id, { ...data, "_method": "PUT" }, {
+            axios.post("https://vica.website/api/items/" + params.id, { name: data.name ? data.name : oldData.name, price: data.price ? data.price : oldData.price, Image: data.image, "_method": "PUT" }, {
                 headers: {
                     Authorization: localStorage.getItem("token"),
                     "Accept": "application/json",

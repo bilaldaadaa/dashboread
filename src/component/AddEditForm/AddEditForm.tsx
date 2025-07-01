@@ -40,7 +40,7 @@ const AddEditForm = ({ title, setData, oldData, loading }: AddEditFormProps) => 
                 </div>
                 <div className="">
                     <label htmlFor="image" className=" flex flex-col items-center justify-center w-[300px] h-[300px] border-2 border-dashed border-blue-400 cursor-pointer">{imageUrl != "" ? <img src={imageUrl} alt="" /> : oldData?.image_url ? <img className="w-[75%]" src={oldData?.image_url} alt="" /> : <PiUploadDuotone className="text-9xl" />} uplod the photo</label>
-                    <input onChange={handelImage} type="file" id="image" className="hidden" required />
+                    <input onChange={handelImage} type="file" id="image" className="hidden" required={oldData ? false : true} />
                 </div>
             </div>
             <button type="submit" className="cursor-pointer bg-blue-900 w-[150px] h-[50px] text-white rounded-2xl " ><span className="flex items-center justify-center">{loading ? <img className="w-[50px] h-[50px]" src={Spinner} alt="" /> : oldData ? "update" : "create"}</span></button>

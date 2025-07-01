@@ -20,7 +20,7 @@ const NavBar = ({ setMood, setSerach, mood }: navBarProps) => {
                     <img className="bg-center rounded-full w-[50px] h-[50px] " src={`${localStorage.getItem("image")}`} alt="" />
                     <div className="">
                         <p className="font-Nunito font-extrabold text-[20px] leading-[100%] text-[#202224] dark:text-white">{localStorage.getItem('UserName')}</p>
-                        <p className="font-Nunito opacity-80 text-[14px] leading-[100%] text-[#202224] dark:text-white">{localStorage.getItem('FirstName') + localStorage.getItem("LastName")}</p>
+                        <p className="font-Nunito opacity-80 text-[14px] leading-[100%] text-[#202224] dark:text-white">{localStorage.getItem('FirstName')}{localStorage.getItem("LastName")}</p>
                     </div>
 
                 </div>

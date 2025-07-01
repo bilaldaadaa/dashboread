@@ -13,7 +13,7 @@ const NavBar = ({ setMood, setSerach, mood }: navBarProps) => {
                 type="text"
                 onChange={(event) => setSerach(event.target.value)}
                 className="border-2 border-black rounded-[8px] dark:border-white py-[5px] px-[10px] dark:text-white dark:placeholder:text-white"
-                placeholder="Search a Product ..."
+                placeholder="Search a Product ...."
             />
             <div className="flex items-center gap-[30px]">
                 <div className="flex justify-center items-center gap-4">

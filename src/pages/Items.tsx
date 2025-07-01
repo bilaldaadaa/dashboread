@@ -6,13 +6,13 @@ import ProductCard from "../component/ProductCard/ProductCard";
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import type { productsData } from "../interfaces";
 import axios from "axios";
-import { toast } from "react-toastify";
+
 
 
 
 
 const Items = () => {
-    c
+    
     const serach = useContext(SearchContext)
     const nav = useNavigate()
     const [data, setData] = useState<Array<productsData>>(useLoaderData<Array<productsData>>())

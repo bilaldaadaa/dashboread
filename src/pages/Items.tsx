@@ -1,9 +1,9 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect, useState, type ReactElement } from "react"
 import { SearchContext } from "../context/Context"
 
 import { IoMdAddCircleOutline } from "react-icons/io";
 import ProductCard from "../component/ProductCard/ProductCard";
-import { useLoaderData,  useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import type { productsData } from "../interfaces";
 import axios from "axios";
 
@@ -12,17 +12,26 @@ import axios from "axios";
 
 
 const Items = () => {
-    
+
     const serach = useContext(SearchContext)
     const nav = useNavigate()
     const [data, setData] = useState<Array<productsData>>(useLoaderData<Array<productsData>>())
     const [showData, setShowData] = useState<Array<productsData>>()
+    const [find, setFind] = useState<ReactElement>(<p></p>)
     const [deleted, setDeleted] = useState<number>(0)
     useEffect(() => {
         if (serach != "") {
-            setShowData(data.filter(value => { return value.name.includes(serach) }))
+            const filtered = data.filter(value => value.name.includes(serach));
+            setShowData(filtered);
+
+            if (filtered.length == 0) {
+                setFind(<p className="dark:text-white text-3xl ">there is no produects with that name...</p>)
+            } else {
+                setFind(<p className=""></p>)
+            }
         } else {
             setShowData(data)
+            setFind(<p className=""></p>)
         }
     }, [serach, data])
     const create = () => {
@@ -70,7 +79,7 @@ const Items = () => {
                             )
                         })
                     }
-
+                    {find}
                 </div>
             </div>
 

@@ -25,12 +25,12 @@ const Add = () => {
                     "Content-Type": "multipart/form-data"
                 }
             }).then(res => {
-                console.log(res)
+
                 toast.success(res.data.message)
                 nav("/dashbored/items")
                 setLoding(false)
             }).catch(err => {
-                console.log(err)
+
                 toast.success(err.data.message)
             })
         }

@@ -26,12 +26,12 @@ const Edit = () => {
                     "Content-Type": "multipart/form-data"
                 }
             }).then(res => {
-                console.log(res)
+
                 toast.success(res.data.message)
                 nav("/dashbored/items")
                 setLoading(false)
             }).catch(err => {
-                console.log(err)
+
                 toast.error(err.data.message)
             })
         }

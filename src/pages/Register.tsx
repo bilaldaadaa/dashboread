@@ -45,7 +45,7 @@ const Register = () => {
                 "Accept": "application/json"
             }
         }).then(res => {
-            console.log(res.data)
+
             localStorage.setItem("token", `Bearer ${res.data.data.token}`)
             localStorage.setItem("UserName", `${res.data.data.user.user_name}`)
             localStorage.setItem("FirstName", `${res.data.data.user.first_name}`)
@@ -54,13 +54,11 @@ const Register = () => {
             toast.success("User is created successfully.")
         }
         ).catch(err => {
-            console.log(err)
             toast.error(err.response.data.message)
-
+            setLoading(false)
         })
         if (localStorage.getItem('token')) {
             nav("/")
-            setLoading(false)
         }
     }
 

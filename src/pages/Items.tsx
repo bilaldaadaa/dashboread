@@ -46,7 +46,6 @@ const Items = () => {
                     "Accept": "application/json"
                 }
             }).then(res => {
-                console.log(res.data)
                 setData(res.data)
             }).catch(err => console.log(err))
         }
